@@ -1,0 +1,13 @@
+105 pollo 0
+105  0
+100 arroz 0
+100  0
+40  200
+10  200
+20  200
+10  45
+10 chan 200
+200  cha 500
+2 0x8cf930 400
+4  chofan con vegetales 450
+14  pollo a la criolla 250
