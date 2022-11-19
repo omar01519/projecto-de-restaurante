@@ -50,7 +50,7 @@ void addtoMenu(){
 		cout<<"                                  Precio del plato"<<endl;
 		cout<<"                                  "; cin>>precioPlato; gets(nombrePlato);
 		
-		archivo<<idPlato<<" "<<nombrePlato<<" "<<precioPlato<<endl;
+		archivo<<idPlato<<" "<<precioPlato<<" "<<nombrePlato<<endl;
 		archivo.close();
 	
 		system("cls");
@@ -112,7 +112,6 @@ void agregarCliente(){
 		cout<<"                               No se pudo crear el archivo."<<endl;
 		exit(1);
 	}
-	
 	
 	cout<<"                                  Nombre de cliente"<<endl;
 	cout<<"                                 "; cin>>nombreClient;
@@ -212,6 +211,34 @@ void gestionMenu(){
 }
 
 
+string getPedido(int filtro){
+	string nomPlato, nameBack;
+	int idPlato;
+		
+	//cout<<"test";
+	
+	ifstream archivo;
+	archivo.open("Menucomida.txt",ios::in);
+	
+
+	if(archivo.fail()){
+		cout<<"No se encontro dato para filtral."<<endl;
+		//exit(1);
+	}
+	
+    
+	while(!archivo.eof()){
+		archivo>>idPlato;
+        getline (archivo,nomPlato);
+        
+        if(idPlato==filtro){
+        	nameBack=nomPlato;
+		}
+        
+        //cout<<idClient<<" "<<nomClient<<" "<<apellClient<<telClient<<endl;
+	}
+	return nameBack;
+};
 
 
 
@@ -223,8 +250,7 @@ int numOrden(){
 	//cout<<"test";
 	
 	ifstream archivo;
-	archivo.open("Ordenes.txt",ios::in);
-	
+	archivo.open("Ordenes.txt",ios::in);	
 
 	if(archivo.fail()){
 		cout<<"No se encontro dato para filtral."<<endl;
@@ -234,7 +260,7 @@ int numOrden(){
     
 	while(!archivo.eof()){
         archivo>>numOrden;
-        archivo>>mesa;
+        getline(archivo,mesa);
         
         cout<<numOrden<<" "<<mesa<<endl;
 	}
@@ -250,8 +276,6 @@ string getClient(int filtro){
 	string nomClient, apellClient, telClient, nameBack;
 	int idClient;
 		
-	
-	
 	//cout<<"test";
 	
 	ifstream archivo;
@@ -318,13 +342,12 @@ void ponerOrden(){
 	
 	ofstream archivo;
 	archivo.open("Ordenes.txt",ios::out | ios::app);
-	int mesa, numPedido, idClient;
-	string valorMesa, nomClient; 
+	int mesa, numPedido, idClient, idPlato;
+	string valorMesa, nomClient, nomPlato;  
 	
-	//getPedido();
 	//getHorapedido();
-	//getIdClient();
-	
+
+
 	
 	cout<<"                                   En que mesa pondras la orden del 1 al 17"<<endl;
 	cout<<"                                   ";cin>>mesa;
@@ -333,26 +356,21 @@ void ponerOrden(){
 	cout<<"                                   Introduce el id Del Cliente"<<endl;
 	cout<<"                                   "; cin>>idClient;
 	nomClient=getClient(idClient);//para colocar el nombre y el id del cliente
-	
 	cout<<"                                   coloca el pedido solicitado"<<endl;
-	
+	cout<<"                                   "; cin>>idPlato;
+	nomPlato=getPedido(idPlato);
 	numPedido=numOrden();//para conseguir el numero de pedido
 	
-
+	//cout<<"llega aqui"<<endl;
 	
 	if(archivo.fail()){
 		cout<<"                               No se pudo crear el archivo."<<endl;
 		exit(1);
 	}
 	
-
+	archivo<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<< idPlato<<" "<<nomPlato<<"\n";
 	
-	archivo<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<< nomClient<<"\n";
-	
-	
-	
- system("pause");
-	
+	system("pause");
 }
 
 
