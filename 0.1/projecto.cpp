@@ -50,9 +50,6 @@ void addtoMenu(){
 		cout<<"                                  Precio del plato"<<endl;
 		cout<<"                                  "; cin>>precioPlato; gets(nombrePlato);
 		
-
-	
-	
 		archivo<<idPlato<<" "<<nombrePlato<<" "<<precioPlato<<endl;
 		archivo.close();
 	
@@ -60,12 +57,8 @@ void addtoMenu(){
 	
 		cout<<"El plato fue añadido con exito."<<endl;
 
-	
-	
-	
 		system("pause");
 	}
-
 }
 
 
@@ -283,10 +276,7 @@ string getClient(int filtro){
         
         //cout<<idClient<<" "<<nomClient<<" "<<apellClient<<telClient<<endl;
 	}
-	
-
 	return nameBack;
-	
 }
 
 
@@ -341,12 +331,10 @@ void ponerOrden(){
 	valorMesa=numeroMesa(mesa);//para colocar orden en una mesa
 	
 	cout<<"                                   Introduce el id Del Cliente"<<endl;
-	cout<<"                                   ";cin>>idClient;
+	cout<<"                                   "; cin>>idClient;
 	nomClient=getClient(idClient);//para colocar el nombre y el id del cliente
 	
 	cout<<"                                   coloca el pedido solicitado"<<endl;
-	
-	
 	
 	numPedido=numOrden();//para conseguir el numero de pedido
 	
@@ -360,6 +348,8 @@ void ponerOrden(){
 
 	
 	archivo<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<< nomClient<<"\n";
+	
+	
 	
  system("pause");
 	
