@@ -178,14 +178,18 @@ void gestionMenu(){
 	
     while(flujo!=101){
         system("cls");
-	    cout<<"                                  *Gestión de Menú*"<<endl;
-	    cout<<"                                  1--Ver Menú"<<endl;
-        cout<<"                                  2--Agregar Plato"<<endl;
-        cout<<"                                  3--Quitar Plato"<<endl;
-        cout<<"                                  4--Modificar Plato"<<endl;
-        cout<<"                                  5--Menú Principal"<<endl;
-        cout<<"                                  6--Salir"<<endl;
-        cout<<"                                     valor:";cin>>flujo;
+        cout<<"==============================================================================================="<<endl;
+        cout<<"*****                                                                                     *****"<<endl;
+	    cout<<"***                               Gestión de Menú                                           ***"<<endl;
+	    cout<<"*****                                                                                     *****"<<endl;
+	    cout<<"==============================================================================================="<<endl;
+	    cout<<"*                                 1--Ver Menú.                                                *"<<endl;
+        cout<<"*                                 2--Agregar Plato.                                           *"<<endl;
+        cout<<"*                                 3--Quitar Plato.                                            *"<<endl;
+        cout<<"*                                 4--Modificar Plato.                                         *"<<endl;
+        cout<<"*                                 5--Menú Principal.                                          *"<<endl;
+        cout<<"*                                 6--Salir.                                                   *"<<endl;
+        cout<<"    Selecciona la opción deseada: ";cin>>flujo;
       
         switch(flujo){
             case 1:break;
@@ -307,23 +311,23 @@ string numeroMesa(int mesa){
 	string numeroMesa;
 	
 	switch(mesa){
-		case 1: numeroMesa="mesa1"; break;
-		case 2: numeroMesa="mesa2"; break;
-		case 3: numeroMesa="mesa3"; break;
-		case 4: numeroMesa="mesa4"; break;
-		case 5: numeroMesa="mesa5"; break;
-		case 6: numeroMesa="mesa6"; break;
-		case 7: numeroMesa="mesa7"; break;
-		case 8: numeroMesa="mesa8"; break;
-		case 9: numeroMesa="mesa9"; break;
-		case 10: numeroMesa="mesa10"; break;
-		case 11: numeroMesa="mesa11"; break;
-		case 12: numeroMesa="mesa12"; break;
-		case 13: numeroMesa="mesa13"; break;
-		case 14: numeroMesa="mesa14"; break;
-		case 15: numeroMesa="mesa15"; break;
-		case 16: numeroMesa="mesa16"; break;
-		case 17: numeroMesa="mesa17"; break;
+		case 1: numeroMesa="Mesa 1"; break;
+		case 2: numeroMesa="Mesa 2"; break;
+		case 3: numeroMesa="Mesa 3"; break;
+		case 4: numeroMesa="Mesa 4"; break;
+		case 5: numeroMesa="Mesa 5"; break;
+		case 6: numeroMesa="Mesa 6"; break;
+		case 7: numeroMesa="Mesa 7"; break;
+		case 8: numeroMesa="Mesa 8"; break;
+		case 9: numeroMesa="Mesa 9"; break;
+		case 10: numeroMesa="Mesa 10"; break;
+		case 11: numeroMesa="Mesa 11"; break;
+		case 12: numeroMesa="Mesa 12"; break;
+		case 13: numeroMesa="Mesa 13"; break;
+		case 14: numeroMesa="Mesa 14"; break;
+		case 15: numeroMesa="Mesa 15"; break;
+		case 16: numeroMesa="Mesa 16"; break;
+		case 17: numeroMesa="Mesa 17"; break;
 		default:  return 0; //cout<<"                    No tenemos ese numero de mesa habilitado actualmente"endl;
 	}
 	
@@ -411,11 +415,11 @@ void Pedido(){
 	setlocale(LC_CTYPE,"Spanish");
     while(flujo!=101){
     	system("cls");
-    	cout<<"==============================================================================================="<<endl;
-        cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"***                               Menú Pedidos                                              ***"<<endl;
-	    cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"==============================================================================================="<<endl;
+    	cout<<"========================================================================================"<<endl;
+        cout<<"*****                                                                              *****"<<endl;
+	    cout<<"***                               Menú Pedidos                                       ***"<<endl;
+	    cout<<"*****                                                                              *****"<<endl;
+	    cout<<"========================================================================================"<<endl;
 		cout<<"*                            1--Agregar Orden                                          *"<<endl;
 		cout<<"*                            2--IDCliente                                              *"<<endl;
 		cout<<"*                            3--Menú de Comida                                         *"<<endl;
@@ -475,9 +479,8 @@ void Administrador(){
         cout<<"*             *                   5--Agregar Empleado                                      *"<<endl;
         cout<<"*             *                   6--Info Restaurante                                      *"<<endl;
         cout<<"*             *                   7--Salir.                                     			  *"<<endl;
-        
-    	cout<<"*              *                     valor:";cin>>flujo;
-        cout<<"*              *                                                                           *"<<endl;
+    	cout<<"*   Selecciona la opción deseada: ";cin>>flujo;
+        cout<<"*             *                                                                           *"<<endl;
         cout<<"*           ***                                                                            *"<<endl;
         cout<<"*          *                                                                               *"<<endl;
         cout<<"********************************************************************************************"<<endl;
@@ -547,16 +550,15 @@ void Empleado(){
     
 	while(flujo!=100){
 		system("cls");
-		cout<<"          **    **                                                                         "<<endl;
-        cout<<"*************  *****************************************************************************"<<endl;
-        cout<<"*******                                                                              *******"<<endl;
-        cout<<"*****                                                                                  *****"<<endl;
-        cout<<"*                                   Menú Principal                                         *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                 1--Gestionar Cliente.                                    *"<<endl;
-        cout<<"*                                 2--Gestionar Pedido.                                     *"<<endl;
-        cout<<"*                                 3--Salir.                                                *"<<endl;
-    	cout<<"    Seleccione la opción deseada: ";cin>>flujo;
+        cout<<"==============================================================================================="<<endl;
+        cout<<"*****                                                                                     *****"<<endl;
+	    cout<<"***                               Menú Principal                                            ***"<<endl;
+	    cout<<"*****                                                                                     *****"<<endl;
+	    cout<<"==============================================================================================="<<endl;
+        cout<<"*                                 1--Gestionar Cliente.                                       *"<<endl;
+        cout<<"*                                 2--Gestionar Pedido.                                        *"<<endl;
+        cout<<"*                                 3--Salir.                                                   *"<<endl;
+    	cout<<"*    Seleccione la opción deseada: ";cin>>flujo	;
         system("cls");
 
     
