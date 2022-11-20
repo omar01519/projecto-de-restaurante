@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<windows.h>
 #include<fstream>
-#include <locale.h> //Libreria para caracteres y acentos
+#include <locale.h> //Libreria para caracteres y acentos h
 using namespace std;
 
 int flujo=999;
