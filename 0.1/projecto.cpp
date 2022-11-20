@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<windows.h>
 #include<fstream>
+#include <locale.h> //Libreria para caracteres y acentos
 using namespace std;
 
 int flujo=999;
@@ -454,7 +455,7 @@ void Pedido(){
 
 
 void Administrador(){	
-    
+    setlocale(LC_CTYPE,"Spanish");
     
     while(flujo!=100){
 		system("cls");
@@ -463,7 +464,7 @@ void Administrador(){
         cout<<"*        *********                                                                         *"<<endl;
         cout<<"*         *******                                                                          *"<<endl;
         cout<<"*          *****                                                                           *"<<endl;
-        cout<<"*           ***                      Menu principal                                        *"<<endl;
+        cout<<"*           ***                      Menú principal                                        *"<<endl;
         cout<<"*            **                   1--gestionar Cliente                                     *"<<endl;
         cout<<"*             *                   2--gestionar pedido                                      *"<<endl;
         cout<<"*             *                   3--Gestion de Menu                                       *"<<endl;        
