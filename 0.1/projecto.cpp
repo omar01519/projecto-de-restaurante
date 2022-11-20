@@ -466,8 +466,8 @@ void Administrador(){
         cout<<"*           ***                      Menu principal                                        *"<<endl;
         cout<<"*            **                   1--gestionar Cliente                                     *"<<endl;
         cout<<"*             *                   2--gestionar pedido                                      *"<<endl;
-        cout<<"*             *                   3--Gestion de Menu                                    	  *"<<endl;        
-        cout<<"*             *                   4--Venta del dia                                      	  *"<<endl;
+        cout<<"*             *                   3--Gestion de Menu                                       *"<<endl;        
+        cout<<"*             *                   4--Venta del dia                                         *"<<endl;
         cout<<"*             *                   5--agregar empleado                                      *"<<endl;
         cout<<"*             *                   6--Info restaurante                                      *"<<endl;
         cout<<"*             *                   7--Salir                                      			  *"<<endl;
