@@ -12,8 +12,8 @@ int flujo=999;
 void Carga(){
 	for (int i=0; i<=100; i++){
 			system("cls");
-		cout<<"                               1--Agregar otro"<<endl;
-		cout<<"                               2--Para salir"<<endl;
+		cout<<"                               [1]. Agregar otro"<<endl;
+		cout<<"                               [2]. Para salir"<<endl;
 		cin>>flujo;
 		
 		switch(flujo){
@@ -178,18 +178,20 @@ void gestionMenu(){
 	
     while(flujo!=101){
         system("cls");
-        cout<<"==============================================================================================="<<endl;
-        cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"***                               Gestión de Menú                                           ***"<<endl;
-	    cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"==============================================================================================="<<endl;
-	    cout<<"*                                 1--Ver Menú.                                                *"<<endl;
-        cout<<"*                                 2--Agregar Plato.                                           *"<<endl;
-        cout<<"*                                 3--Quitar Plato.                                            *"<<endl;
-        cout<<"*                                 4--Modificar Plato.                                         *"<<endl;
-        cout<<"*                                 5--Menú Principal.                                          *"<<endl;
-        cout<<"*                                 6--Salir.                                                   *"<<endl;
-        cout<<"    Selecciona la opción deseada: ";cin>>flujo;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                   Gestión Menú                                            *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+	    cout<<"*                                 [1]. Ver Menú.                                           *"<<endl;
+        cout<<"*                                 [2]. Agregar Plato.                                      *"<<endl;
+        cout<<"*                                 [3]. Quitar Plato.                                       *"<<endl;
+        cout<<"*                                 [4]. Modificar Plato.                                    *"<<endl;
+        cout<<"*                                 [5]. Menú Principal.                                     *"<<endl;
+        cout<<"*                                 [6]. Salir.                                              *"<<endl;
+        cout<<"    Seleccione la opción deseada: ";cin>>flujo;
       
         switch(flujo){
             case 1:break;
@@ -378,17 +380,19 @@ void Cliente(){
 
 while(flujo!=101){
         system("cls");
-        cout<<"==============================================================================================="<<endl;
-        cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"***                               Menú Cliente                                              ***"<<endl;
-	    cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"==============================================================================================="<<endl;
-	    cout<<"*                             1--Agregar Clientes.                                            *"<<endl;
-        cout<<"*                             2--Actualizar Clientes.                                         *"<<endl;
-        cout<<"*                             3--Filtrar Clientes.                                            *"<<endl;
-        cout<<"*                             4--Eliminar.                                                    *"<<endl;
-        cout<<"*                             5--Menú Principal.                                              *"<<endl;
-        cout<<"*                             6--Salir.                                                       *"<<endl;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                   Menú Clientes                                           *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+	    cout<<"*                             [1]. Agregar Clientes.                                       *"<<endl;
+        cout<<"*                             [2]. Actualizar Clientes.                                    *"<<endl;
+        cout<<"*                             [3]. Filtrar Clientes.                                       *"<<endl;
+        cout<<"*                             [4]. Eliminar.                                               *"<<endl;
+        cout<<"*                             [5]. Menú Principal.                                         *"<<endl;
+        cout<<"*                             [6]. Salir.                                                  *"<<endl;
 		cout<<"Seleccione la opción deseada: ";cin>>flujo;
       
         switch(flujo){
@@ -415,21 +419,22 @@ void Pedido(){
 	setlocale(LC_CTYPE,"Spanish");
     while(flujo!=101){
     	system("cls");
-    	cout<<"========================================================================================"<<endl;
-        cout<<"*****                                                                              *****"<<endl;
-	    cout<<"***                               Menú Pedidos                                       ***"<<endl;
-	    cout<<"*****                                                                              *****"<<endl;
-	    cout<<"========================================================================================"<<endl;
-		cout<<"*                            1--Agregar Orden                                          *"<<endl;
-		cout<<"*                            2--IDCliente                                              *"<<endl;
-		cout<<"*                            3--Menú de Comida                                         *"<<endl;
-		cout<<"*                            4--Factura.                                               *"<<endl;
-		cout<<"*                            5--Filtrar pedido                                         *"<<endl;
-		cout<<"*                            6--Actualizar pedido                                      *"<<endl;
-		cout<<"*                            7--Eliminar pedido                                        *"<<endl;
-		cout<<"*                            8--Volver al menú principal                               *"<<endl;
-		cout<<"*                            9--Menú principal                                         *"<<endl;
-		cout<<"*                            9--Salir.                                                 *"<<endl;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                   Menú Pedidos                                            *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+		cout<<"*                            [1]. Agregar Orden                                            *"<<endl;
+		cout<<"*                            [2]. IDCliente                                                *"<<endl;
+		cout<<"*                            [3]. Menú de Comida                                           *"<<endl;
+		cout<<"*                            [4]. Factura.                                                 *"<<endl;
+		cout<<"*                            [6]. Actualizar pedido                                        *"<<endl;
+		cout<<"*                            [7]. Eliminar pedido                                          *"<<endl;
+		cout<<"*                            [8]. Volver al menú principal                                 *"<<endl;
+		cout<<"*                            [9]. Menú principal                                           *"<<endl;
+		cout<<"*                            [9]. Salir.                                                   *"<<endl;
 		cout<<"Seleccione la opción deseada: ";cin>>flujo;
     
     	switch(flujo){
@@ -467,21 +472,21 @@ void Administrador(){
     while(flujo!=100){
 		system("cls");
 		cout<<"          **    **                                                                          "<<endl;
-        cout<<"*************  *****************************************************************************"<<endl;
-        cout<<"*        *********                                                                         *"<<endl;
-        cout<<"*         *******                 Menú Principal                                           *"<<endl;
-        cout<<"*          *****                                                                           *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
-        cout<<"*Usuario: Administrador.                                                                   *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
-        cout<<"*            **                   1--Gestionar Cliente                                     *"<<endl;
-        cout<<"*             *                   2--Gestionar Pedido                                      *"<<endl;
-        cout<<"*             *                   3--Gestion de Menú                                       *"<<endl;        
-        cout<<"*             *                   4--Venta del día                                         *"<<endl;
-        cout<<"*             *                   5--Agregar Empleado                                      *"<<endl;
-        cout<<"*             *                   6--Info Restaurante                                      *"<<endl;
-        cout<<"*             *                   7--Salir.                                     			  *"<<endl;
-    	cout<<"*   Selecciona la opción deseada: ";cin>>flujo;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                  Menú Principal                                           *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*            **               [1]. Gestionar Cliente.                                      *"<<endl;
+        cout<<"*             *               [2]. Gestionar Pedido.                                       *"<<endl;
+        cout<<"*             *               [3]. Gestión de Menú.                                        *"<<endl;        
+        cout<<"*             *               [4]. Venta del día.                                          *"<<endl;
+        cout<<"*             *               [5]. Agregar Empleado.                                       *"<<endl;
+        cout<<"*             *               [6]. Info Restaurante.                                       *"<<endl;
+        cout<<"*             *               [7]. Salir.                                                  *"<<endl;
+    	cout<<"*Seleccione la opción deseada: ";cin>>flujo;
         system("cls");
     
         switch(flujo){
@@ -547,14 +552,17 @@ void Empleado(){
     
 	while(flujo!=100){
 		system("cls");
-        cout<<"==============================================================================================="<<endl;
-        cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"***                               Menú Principal                                            ***"<<endl;
-	    cout<<"*****                                                                                     *****"<<endl;
-	    cout<<"==============================================================================================="<<endl;
-        cout<<"*                                 1--Gestionar Cliente.                                       *"<<endl;
-        cout<<"*                                 2--Gestionar Pedido.                                        *"<<endl;
-        cout<<"*                                 3--Salir.                                                   *"<<endl;
+		cout<<"          **    **                                                                          "<<endl;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                  Menú Principal                                           *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Empleado.                                                                         *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*                              [1]. Gestionar Cliente.                                     *"<<endl;
+        cout<<"*                              [2]. Gestionar Pedido.                                      *"<<endl;
+        cout<<"*                              [3]. Salir.                                                 *"<<endl;
     	cout<<"*    Seleccione la opción deseada: ";cin>>flujo	;
         system("cls");
 
@@ -625,25 +633,27 @@ void login(){
 	while(flujo!=0){
 		string usuario, contrasena;
         flujo=999;
-		cout<<"========================================================================================"<<endl;
-		cout<<"*                                                                                      *"<<endl;
-		cout<<"*                                   O & J FOOD                                         *"<<endl;
-		cout<<"*Iniciar Sección                                                                       *"<<endl;
-		cout<<"========================================================================================"<<endl;
-		cout<<"          Hola! Para acceder a la plataforma, ingresa las credenciales:"<<endl;
-		cout<<"          Introduce tu usuario"<<endl;
-		cout<<"          ";cin>>usuario;
-		cout<<"          Introduce tu contraseña"<<endl;
-		cout<<"          ";cin>>contrasena;		
+        cout<<" ************  *****************************************************************************"<<endl;
+        cout<<"*        *********                     O & J FOOD                                           *"<<endl;
+        cout<<"*         *******           Desayunos, Almuerzos y Aperitivos.                              *"<<endl;
+        cout<<"*          *****    Copyright 2022 | Algoritmo y estructura de datos.                       *"<<endl;
+        cout<<"*********************************************************************************************"<<endl;
+        cout<<"*Iniciar Sección.                                                  by:2019-1416 & 2015-1666 *"<<endl;
+        cout<<"*===========================================================================================*"<<endl;
+        cout<<"==>Para acceder a la plataforma, ingresa las credenciales:"<<endl;
+		cout<<"          Introduzca el nombre de usuario"<<endl;
+		cout<<"        =>";cin>>usuario;
+		cout<<"          Introduzca la contraseña"<<endl;
+		cout<<"        =>";cin>>contrasena;		
 		
 		if(contrasena=="admin" && usuario=="admin"){
-            cout<<"                	                    *************************"<<endl;
+            cout<<"                	                    *************************a"<<endl;
 			Administrador();
-            cout<<"                	                    *************************"<<endl;
+            cout<<"                	                    *************************a"<<endl;
 		}
-		else{cout<<"                	                    *************************"<<endl;
+		else{cout<<"                	                 *************************e"<<endl;
 			Empleado();
-            cout<<"                	                    *************************"<<endl;
+            cout<<"                	                     *************************e"<<endl;
 		}
 	}
 
