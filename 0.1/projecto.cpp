@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<windows.h>
 #include<fstream>
-#include <locale.h> //Libreria para caracteres y acentos h hhhh
+#include <locale.h> //Libreria para caracteres y acentos
 using namespace std;
 
 int flujo=999;
@@ -12,15 +12,15 @@ int flujo=999;
 void Carga(){
 	for (int i=0; i<=100; i++){
 			system("cls");
-		cout<<"                               1--agregar otro"<<endl;
-		cout<<"                               2--para salir"<<endl;
+		cout<<"                               1--Agregar otro"<<endl;
+		cout<<"                               2--Para salir"<<endl;
 		cin>>flujo;
 		
 		switch(flujo){
 			
 			case 1:continue; break;
 			case 2: break;
-			default: cout<<"                 valor incorrecto"<<endl;
+			default: cout<<"                 Valor incorrecto"<<endl;
 		}
 	
 	}	
@@ -35,7 +35,7 @@ void addtoMenu(){
 		char nombrePlato[20];
 		int precioPlato, idPlato;
 	
-		cout<<"                                   Introduce los datos solicitados del menu."<<endl;
+		cout<<"                             Introduce los datos solicitados del menu."<<endl;
 	
 		if(archivo.fail()){
 		cout<<"                               No se pudo crear el archivo."<<endl;
@@ -93,9 +93,6 @@ int autoIdclient(){
 
 	return idClient;
 }
-
-
-
 
 void agregarCliente(){
 	system("cls");
@@ -332,9 +329,6 @@ string numeroMesa(int mesa){
 }
 
 
-
-
-
 void ponerOrden(){
 		system("cls");
 	
@@ -405,10 +399,6 @@ while(flujo!=101){
     }    
 }
 
-
-
-
-
 void Pedido(){
     while(flujo!=101){
     	system("cls");
@@ -423,7 +413,7 @@ void Pedido(){
 		cout<<"                                  8--Volver al menu principal"<<endl;
 		cout<<"                                  9--Menu principal"<<endl;
 		cout<<"                                  9--Salir"<<endl;
-		cout<<"                                     valor:";cin>>flujo;
+		cout<<"                                     Valor: ";cin>>flujo;
     
     	switch(flujo){
         	case 1: ponerOrden(); break;
@@ -526,9 +516,6 @@ void Administrador(){
         case 6: break;
         case 7: flujo=100; break;
         
-       
-    
-        
         default:
         	cout<<"                	              *************************"<<endl;
        		cout<<"                               *   Valor Incorrecto    *"<<endl;
@@ -537,13 +524,9 @@ void Administrador(){
     }   
 
     }
-    
+
     //return 0;
 }
-
-
-
-
 
 
 void Empleado(){	
@@ -553,17 +536,17 @@ void Empleado(){
 		system("cls");
 		cout<<"          **    **                                                                         "<<endl;
         cout<<"*************  *****************************************************************************"<<endl;
-        cout<<"*        *********                                                                         *"<<endl;
-        cout<<"*         *******                                                                          *"<<endl;
-        cout<<"*          *****                                                                           *"<<endl;
-        cout<<"*           ***                      Menu principal                                        *"<<endl;
-        cout<<"*            **                   1--gestionar Cliente                                     *"<<endl;
-        cout<<"*             *                   2--gestionar pedido                                      *"<<endl;
-        cout<<"*             *                   3--Salir                                                 *"<<endl;
-    	cout<<"*              *                     valor:";cin>>flujo;
-        cout<<"*              *                                                                           *"<<endl;
-        cout<<"*           ***                                                                            *"<<endl;
-        cout<<"*          *                                                                               *"<<endl;
+        cout<<"*******                                                                              *******"<<endl;
+        cout<<"*****                                                                                  *****"<<endl;
+        cout<<"*                                                                                          *"<<endl;
+        cout<<"*                                    Menu principal                                        *"<<endl;
+        cout<<"*                                 1--gestionar Cliente                                     *"<<endl;
+        cout<<"*                                 2--gestionar pedido                                      *"<<endl;
+        cout<<"*                                 3--Salir                                                 *"<<endl;
+    	cout<<"*                                    valor:";cin>>flujo;
+        cout<<"*                                                                                          *"<<endl;
+        cout<<"*                                                                                          *"<<endl;
+        cout<<"*                                                                                          *"<<endl;
         cout<<"********************************************************************************************"<<endl;
         system("cls");
 
@@ -610,7 +593,6 @@ void Empleado(){
         
         default:
         	
-        
         	cout<<"                	              *************************"<<endl;
        		cout<<"                               *   Valor Incorrecto    *"<<endl;
        		cout<<"                	              *************************"<<endl;
@@ -626,13 +608,6 @@ void Empleado(){
 
 //	return 0;
 }
-
-
-
-
-
-
-
 
 
 
@@ -668,25 +643,9 @@ void login(){
     system("pause");
 }
 
-
 int main(){
 
     login();
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
