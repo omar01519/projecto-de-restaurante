@@ -374,14 +374,18 @@ void Cliente(){
 
 while(flujo!=101){
         system("cls");
-	    cout<<"                                 Menú Cliente"<<endl;
-	    cout<<"                                  1--Agregar Clientes"<<endl;
-        cout<<"                                  2--Actualizar Clientes"<<endl;
-        cout<<"                                  3--Filtrar Clientes"<<endl;
-        cout<<"                                  4--Eliminar"<<endl;
-        cout<<"                                  5--Menú Principal"<<endl;
-        cout<<"                                  6--Salir."<<endl;
-		cout<<"    Seleccione la opción deseada: ";cin>>flujo;
+        cout<<"==============================================================================================="<<endl;
+        cout<<"*****                                                                                     *****"<<endl;
+	    cout<<"***                               Menú Cliente                                              ***"<<endl;
+	    cout<<"*****                                                                                     *****"<<endl;
+	    cout<<"==============================================================================================="<<endl;
+	    cout<<"*                             1--Agregar Clientes.                                            *"<<endl;
+        cout<<"*                             2--Actualizar Clientes.                                         *"<<endl;
+        cout<<"*                             3--Filtrar Clientes.                                            *"<<endl;
+        cout<<"*                             4--Eliminar.                                                    *"<<endl;
+        cout<<"*                             5--Menú Principal.                                              *"<<endl;
+        cout<<"*                             6--Salir.                                                       *"<<endl;
+		cout<<"Seleccione la opción deseada: ";cin>>flujo;
       
         switch(flujo){
             case 1: agregarCliente(); break;
@@ -544,16 +548,12 @@ void Empleado(){
         cout<<"*************  *****************************************************************************"<<endl;
         cout<<"*******                                                                              *******"<<endl;
         cout<<"*****                                                                                  *****"<<endl;
+        cout<<"*                                   Menú Principal                                         *"<<endl;
         cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                    Menú Principal                                        *"<<endl;
         cout<<"*                                 1--Gestionar Cliente.                                    *"<<endl;
         cout<<"*                                 2--Gestionar Pedido.                                     *"<<endl;
         cout<<"*                                 3--Salir.                                                *"<<endl;
-    	cout<<"*                                    valor:";cin>>flujo;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
+    	cout<<"    Seleccione la opción deseada: ";cin>>flujo;
         system("cls");
 
     
