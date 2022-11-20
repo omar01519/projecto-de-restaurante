@@ -469,9 +469,11 @@ void Administrador(){
 		cout<<"          **    **                                                                          "<<endl;
         cout<<"*************  *****************************************************************************"<<endl;
         cout<<"*        *********                                                                         *"<<endl;
-        cout<<"*         *******                                                                          *"<<endl;
+        cout<<"*         *******                 Menú Principal                                           *"<<endl;
         cout<<"*          *****                                                                           *"<<endl;
-        cout<<"*           ***                      Menú Principal                                        *"<<endl;
+        cout<<"********************************************************************************************"<<endl;
+        cout<<"*Usuario: Administrador.                                                                   *"<<endl;
+        cout<<"********************************************************************************************"<<endl;
         cout<<"*            **                   1--Gestionar Cliente                                     *"<<endl;
         cout<<"*             *                   2--Gestionar Pedido                                      *"<<endl;
         cout<<"*             *                   3--Gestion de Menú                                       *"<<endl;        
@@ -480,12 +482,7 @@ void Administrador(){
         cout<<"*             *                   6--Info Restaurante                                      *"<<endl;
         cout<<"*             *                   7--Salir.                                     			  *"<<endl;
     	cout<<"*   Selecciona la opción deseada: ";cin>>flujo;
-        cout<<"*             *                                                                           *"<<endl;
-        cout<<"*           ***                                                                            *"<<endl;
-        cout<<"*          *                                                                               *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
         system("cls");
-
     
         switch(flujo){
     
@@ -628,12 +625,16 @@ void login(){
 	while(flujo!=0){
 		string usuario, contrasena;
         flujo=999;
-	
-		cout<<"                 Hola! Para acceder a la plataforma, ingresa las credenciales:"<<endl;
-		cout<<"                 Introduce tu usuario"<<endl;
-		cout<<"                 ";cin>>usuario;
-		cout<<"                 Introduce tu contraseña"<<endl;
-		cout<<"                 ";cin>>contrasena;		
+		cout<<"========================================================================================"<<endl;
+		cout<<"*                                                                                      *"<<endl;
+		cout<<"*                                   O & J FOOD                                         *"<<endl;
+		cout<<"*Iniciar Sección                                                                       *"<<endl;
+		cout<<"========================================================================================"<<endl;
+		cout<<"          Hola! Para acceder a la plataforma, ingresa las credenciales:"<<endl;
+		cout<<"          Introduce tu usuario"<<endl;
+		cout<<"          ";cin>>usuario;
+		cout<<"          Introduce tu contraseña"<<endl;
+		cout<<"          ";cin>>contrasena;		
 		
 		if(contrasena=="admin" && usuario=="admin"){
             cout<<"                	                    *************************"<<endl;
