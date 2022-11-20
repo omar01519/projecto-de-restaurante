@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<windows.h>
 #include<fstream>
-#include <locale.h> //Libreria para caracteres y acentos h
+#include <locale.h> //Libreria para caracteres y acentos h hhhh
 using namespace std;
 
 int flujo=999;
@@ -464,7 +464,7 @@ void Administrador(){
         cout<<"*        *********                                                                         *"<<endl;
         cout<<"*         *******                                                                          *"<<endl;
         cout<<"*          *****                                                                           *"<<endl;
-        cout<<"*           ***                      Menú principal                                        *"<<endl;
+        cout<<"*           ***                      Menï¿½ principal                                        *"<<endl;
         cout<<"*            **                   1--gestionar Cliente                                     *"<<endl;
         cout<<"*             *                   2--gestionar pedido                                      *"<<endl;
         cout<<"*             *                   3--Gestion de Menu                                       *"<<endl;        
