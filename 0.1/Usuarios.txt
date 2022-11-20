@@ -1,0 +1,9 @@
+Accesos para ingresar a la plataforma:
+
+Administrador:
+Usuario: admin
+Contraseña: admin
+
+Empleados
+Usuario: empl
+Contraseña: empl
