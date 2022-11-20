@@ -128,8 +128,6 @@ void agregarCliente(){
 	system("cls");
 	cout<<"Cliente guardado exitosamente"<<endl;
 	system("pause");
-	
-	
 }
 
 
@@ -220,7 +218,6 @@ string getPedido(int filtro){
 	ifstream archivo;
 	archivo.open("Menucomida.txt",ios::in);
 	
-
 	if(archivo.fail()){
 		cout<<"No se encontro dato para filtral."<<endl;
 		//exit(1);
@@ -352,7 +349,6 @@ void ponerOrden(){
 	cout<<"                                   En que mesa pondras la orden del 1 al 17"<<endl;
 	cout<<"                                   ";cin>>mesa;
 	valorMesa=numeroMesa(mesa);//para colocar orden en una mesa
-	
 	cout<<"                                   Introduce el id Del Cliente"<<endl;
 	cout<<"                                   "; cin>>idClient;
 	nomClient=getClient(idClient);//para colocar el nombre y el id del cliente
@@ -368,7 +364,7 @@ void ponerOrden(){
 		exit(1);
 	}
 	
-	archivo<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<< idPlato<<" "<<nomPlato<<"\n";
+	archivo<<numPedido<<"  "<<valorMesa<<"  "<<idClient<<" "<<nomClient<<"  "<<idPlato<<" "<<nomPlato<<"\n";
 	
 	system("pause");
 }
