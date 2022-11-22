@@ -3,3 +3,6 @@
 4 mesa15 4 Leticia 51   450 pollo a la criolla 
 5 mesa1 1 gorge 51   450 pollo a la criolla 
 6  mesa16  2 Marcos  50   450 chofan con vegetales 
+
+7 mesa5 2 Marcos 50   450 chofan con vegetales 
+8 mesa5 3 Irania 51   450 pollo a la criolla 

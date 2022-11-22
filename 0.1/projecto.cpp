@@ -260,7 +260,7 @@ int numOrden(){
         archivo>>numOrden;
         getline(archivo,mesa);
         
-        cout<<numOrden<<" "<<mesa<<endl;
+        //cout<<numOrden<<" "<<mesa<<endl;
 	}
 	
 	numOrden=numOrden+1;
@@ -365,7 +365,7 @@ void ponerOrden(){
 		exit(1);
 	}
 	
-	archivo<<numPedido<<"  "<<valorMesa<<"  "<<idClient<<" "<<nomClient<<"  "<<idPlato<<" "<<nomPlato<<"\n";
+	archivo<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
 	
 	system("pause");
 }
