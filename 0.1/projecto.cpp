@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<windows.h>
 #include<fstream>
-#include <locale.h> //Libreria para caracteres y acentos h hhhh
+#include <locale.h> //Libreria para caracteres y acentos
 using namespace std;
 
 int flujo=999;
@@ -12,21 +12,22 @@ int flujo=999;
 void Carga(){
 	for (int i=0; i<=100; i++){
 			system("cls");
-		cout<<"                               1--agregar otro"<<endl;
-		cout<<"                               2--para salir"<<endl;
+		cout<<"                               [1]. Agregar otro"<<endl;
+		cout<<"                               [2]. Para salir"<<endl;
 		cin>>flujo;
 		
 		switch(flujo){
 			
 			case 1:continue; break;
 			case 2: break;
-			default: cout<<"                 valor incorrecto"<<endl;
+			default: cout<<"                 Valor incorrecto."<<endl;
 		}
 	
 	}	
 }
 
 void addtoMenu(){
+	setlocale(LC_CTYPE,"Spanish");
 	
 	while(flujo==2){
 		system("cls");
@@ -35,7 +36,7 @@ void addtoMenu(){
 		char nombrePlato[20];
 		int precioPlato, idPlato;
 	
-		cout<<"                                   Introduce los datos solicitados del menu."<<endl;
+		cout<<"                             Introduce los datos solicitados del menú."<<endl;
 	
 		if(archivo.fail()){
 		cout<<"                               No se pudo crear el archivo."<<endl;
@@ -48,7 +49,7 @@ void addtoMenu(){
 		cout<<"                                  Nombre del plato"<<endl;
 		
 	
-		cout<<"                                  Precio del plato"<<endl;
+		cout<<"                                  Precio del Plato"<<endl;
 		cout<<"                                  "; cin>>precioPlato; gets(nombrePlato);
 		
 		archivo<<idPlato<<" "<<precioPlato<<" "<<nombrePlato<<endl;
@@ -56,7 +57,7 @@ void addtoMenu(){
 	
 		system("cls");
 	
-		cout<<"El plato fue aÃ±adido con exito."<<endl;
+		cout<<"El plato fue añadido con exito."<<endl;
 
 		system("pause");
 	}
@@ -74,7 +75,7 @@ int autoIdclient(){
 	
 
 	if(archivo.fail()){
-		cout<<"No se encontro dato para filtral."<<endl;
+		cout<<"No se encontro dato para filtrar."<<endl;
 		//exit(1);
 	}
 	
@@ -94,10 +95,8 @@ int autoIdclient(){
 	return idClient;
 }
 
-
-
-
 void agregarCliente(){
+	setlocale(LC_CTYPE,"Spanish");
 	system("cls");
 	
 	int idClient=autoIdclient();
@@ -107,40 +106,39 @@ void agregarCliente(){
 	archivo.open("cliente.txt",ios::out | ios::app);
 	string nombreClient, apellidoClient, contactoClient;
 	
-	cout<<"                                   introduce los datos del usuario."<<endl;
+	cout<<"                                Introduce los datos del usuario."<<endl;
 	
 	if(archivo.fail()){
-		cout<<"                               No se pudo crear el archivo."<<endl;
+		cout<<"                            No se pudo crear el archivo."<<endl;
 		exit(1);
 	}
 	
-	cout<<"                                  Nombre de cliente"<<endl;
+	cout<<"                                  Nombre de Cliente"<<endl;
 	cout<<"                                 "; cin>>nombreClient;
 	
-	cout<<"                                  Apellido "<<endl;
+	cout<<"                                  Apellido de Cliente"<<endl;
 	cout<<"                                 "; cin>>apellidoClient;
 	
-	cout<<"                                  Numero telefonico  "<<endl;
+	cout<<"                                  Número telefónico"<<endl;
 	cout<<"                                  "; cin>>contactoClient;
 	
 	archivo<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
 	archivo.close();
 	
 	system("cls");
-	cout<<"Cliente guardado exitosamente"<<endl;
+	cout<<"Cliente guardado exitosamente."<<endl;
 	system("pause");
 }
 
 
 
 
-
-
 string filtrarCliente(){
+	setlocale(LC_CTYPE,"Spanish");
     string nombreClient, apellidoClient, contactoClient, idClient, filtro, filtro2;
 	ifstream archivo;
 	archivo.open("cliente.txt",ios::in);
-	cout<<"									Introduce id, telefono, nombre o apellido."<<endl;
+	cout<<"									Introduce ID, Teléfono, Nombre o Apellido."<<endl;
     cout<< "                               ";  cin>>filtro;
 
 	if(archivo.fail()){
@@ -176,17 +174,24 @@ string filtrarCliente(){
 
 
 void gestionMenu(){
+	setlocale(LC_CTYPE,"Spanish");
 	
     while(flujo!=101){
         system("cls");
-	    cout<<"                                     Gestion de Menu"<<endl;
-	    cout<<"                                  1--Ver menu"<<endl;
-        cout<<"                                  2--Agregar Plato"<<endl;
-        cout<<"                                  3--Quitar plato"<<endl;
-        cout<<"                                  4--Modificar plato"<<endl;
-        cout<<"                                  5--Menu principal"<<endl;
-        cout<<"                                  6--Salir"<<endl;
-        cout<<"                                     valor:";cin>>flujo;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                   Gestión Menú                                            *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+	    cout<<"*                                 [1]. Ver Menú.                                           *"<<endl;
+        cout<<"*                                 [2]. Agregar Plato.                                      *"<<endl;
+        cout<<"*                                 [3]. Quitar Plato.                                       *"<<endl;
+        cout<<"*                                 [4]. Modificar Plato.                                    *"<<endl;
+        cout<<"*                                 [5]. Menú Principal.                                     *"<<endl;
+        cout<<"*                                 [6]. Salir.                                              *"<<endl;
+        cout<<"    Seleccione la opción deseada: ";cin>>flujo;
       
         switch(flujo){
             case 1:break;
@@ -220,7 +225,7 @@ string getPedido(int filtro){
 	archivo.open("Menucomida.txt",ios::in);
 	
 	if(archivo.fail()){
-		cout<<"No se encontro dato para filtral."<<endl;
+		cout<<"No se encontro dato para filtrar."<<endl;
 		//exit(1);
 	}
 	
@@ -251,7 +256,7 @@ int numOrden(){
 	archivo.open("Ordenes.txt",ios::in);	
 
 	if(archivo.fail()){
-		cout<<"No se encontro dato para filtral."<<endl;
+		cout<<"No se encontró dato para filtrar."<<endl;
 		//exit(1);
 	}
 	
@@ -281,7 +286,7 @@ string getClient(int filtro){
 	
 
 	if(archivo.fail()){
-		cout<<"No se encontro dato para filtral."<<endl;
+		cout<<"No se encontró dato para filtrar."<<endl;
 		//exit(1);
 	}
 	
@@ -308,23 +313,23 @@ string numeroMesa(int mesa){
 	string numeroMesa;
 	
 	switch(mesa){
-		case 1: numeroMesa="mesa1"; break;
-		case 2: numeroMesa="mesa2"; break;
-		case 3: numeroMesa="mesa3"; break;
-		case 4: numeroMesa="mesa4"; break;
-		case 5: numeroMesa="mesa5"; break;
-		case 6: numeroMesa="mesa6"; break;
-		case 7: numeroMesa="mesa7"; break;
-		case 8: numeroMesa="mesa8"; break;
-		case 9: numeroMesa="mesa9"; break;
-		case 10: numeroMesa="mesa10"; break;
-		case 11: numeroMesa="mesa11"; break;
-		case 12: numeroMesa="mesa12"; break;
-		case 13: numeroMesa="mesa13"; break;
-		case 14: numeroMesa="mesa14"; break;
-		case 15: numeroMesa="mesa15"; break;
-		case 16: numeroMesa="mesa16"; break;
-		case 17: numeroMesa="mesa17"; break;
+		case 1: numeroMesa="Mesa 1"; break;
+		case 2: numeroMesa="Mesa 2"; break;
+		case 3: numeroMesa="Mesa 3"; break;
+		case 4: numeroMesa="Mesa 4"; break;
+		case 5: numeroMesa="Mesa 5"; break;
+		case 6: numeroMesa="Mesa 6"; break;
+		case 7: numeroMesa="Mesa 7"; break;
+		case 8: numeroMesa="Mesa 8"; break;
+		case 9: numeroMesa="Mesa 9"; break;
+		case 10: numeroMesa="Mesa 10"; break;
+		case 11: numeroMesa="Mesa 11"; break;
+		case 12: numeroMesa="Mesa 12"; break;
+		case 13: numeroMesa="Mesa 13"; break;
+		case 14: numeroMesa="Mesa 14"; break;
+		case 15: numeroMesa="Mesa 15"; break;
+		case 16: numeroMesa="Mesa 16"; break;
+		case 17: numeroMesa="Mesa 17"; break;
 		default:  return 0; //cout<<"                    No tenemos ese numero de mesa habilitado actualmente"endl;
 	}
 	
@@ -332,10 +337,8 @@ string numeroMesa(int mesa){
 }
 
 
-
-
-
 void ponerOrden(){
+	setlocale(LC_CTYPE,"Spanish");
 		system("cls");
 	
 	ofstream archivo;
@@ -347,13 +350,13 @@ void ponerOrden(){
 
 
 	
-	cout<<"                                   En que mesa pondras la orden del 1 al 17"<<endl;
+	cout<<"         Selecciona el número de mesa a la cuál asignarás la orden (1 al 17)"<<endl;
 	cout<<"                                   ";cin>>mesa;
 	valorMesa=numeroMesa(mesa);//para colocar orden en una mesa
-	cout<<"                                   Introduce el id Del Cliente"<<endl;
+	cout<<"                                   Introduce el ID Del Cliente"<<endl;
 	cout<<"                                   "; cin>>idClient;
 	nomClient=getClient(idClient);//para colocar el nombre y el id del cliente
-	cout<<"                                   coloca el pedido solicitado"<<endl;
+	cout<<"                                   Coloca el pedido solicitado"<<endl;
 	cout<<"                                   "; cin>>idPlato;
 	nomPlato=getPedido(idPlato);
 	numPedido=numOrden();//para conseguir el numero de pedido
@@ -373,17 +376,24 @@ void ponerOrden(){
 
 
 void Cliente(){
+	setlocale(LC_CTYPE,"Spanish");
 
 while(flujo!=101){
         system("cls");
-	    cout<<"                                 Menu Cliente"<<endl;
-	    cout<<"                                  1--Agregar clientes"<<endl;
-        cout<<"                                  2--Actualizar clientes"<<endl;
-        cout<<"                                  3--Filtrar clientes"<<endl;
-        cout<<"                                  4--Eliminar"<<endl;
-        cout<<"                                  5--Menu principal"<<endl;
-        cout<<"                                  6--Salir"<<endl;
-        cout<<"                                     valor:";cin>>flujo;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                   Menú Clientes                                           *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+	    cout<<"*                             [1]. Agregar Clientes.                                       *"<<endl;
+        cout<<"*                             [2]. Actualizar Clientes.                                    *"<<endl;
+        cout<<"*                             [3]. Filtrar Clientes.                                       *"<<endl;
+        cout<<"*                             [4]. Eliminar.                                               *"<<endl;
+        cout<<"*                             [5]. Menú Principal.                                         *"<<endl;
+        cout<<"*                             [6]. Salir.                                                  *"<<endl;
+		cout<<"Seleccione la opción deseada: ";cin>>flujo;
       
         switch(flujo){
             case 1: agregarCliente(); break;
@@ -405,25 +415,27 @@ while(flujo!=101){
     }    
 }
 
-
-
-
-
 void Pedido(){
+	setlocale(LC_CTYPE,"Spanish");
     while(flujo!=101){
     	system("cls");
-		cout<<"                                     Pedidos"<<endl;
-		cout<<"                                  1--Poner Orden"<<endl;
-		cout<<"                                  2--IDclietne"<<endl;
-		cout<<"                                  3--MenÃº de comida"<<endl;
-		cout<<"                                  4--Factura."<<endl;
-		cout<<"                                  5--Filtrar pedido"<<endl;
-		cout<<"                                  6--Actualizar pedido"<<endl;
-		cout<<"                                  7--Eliminar pedido"<<endl;
-		cout<<"                                  8--Volver al menu principal"<<endl;
-		cout<<"                                  9--Menu principal"<<endl;
-		cout<<"                                  9--Salir"<<endl;
-		cout<<"                                     valor:";cin>>flujo;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                   Menú Pedidos                                            *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+		cout<<"*                            [1]. Agregar Orden                                            *"<<endl;
+		cout<<"*                            [2]. IDCliente                                                *"<<endl;
+		cout<<"*                            [3]. Menú de Comida                                           *"<<endl;
+		cout<<"*                            [4]. Factura.                                                 *"<<endl;
+		cout<<"*                            [6]. Actualizar pedido                                        *"<<endl;
+		cout<<"*                            [7]. Eliminar pedido                                          *"<<endl;
+		cout<<"*                            [8]. Volver al menú principal                                 *"<<endl;
+		cout<<"*                            [9]. Menú principal                                           *"<<endl;
+		cout<<"*                            [9]. Salir.                                                   *"<<endl;
+		cout<<"Seleccione la opción deseada: ";cin>>flujo;
     
     	switch(flujo){
         	case 1: ponerOrden(); break;
@@ -460,26 +472,22 @@ void Administrador(){
     while(flujo!=100){
 		system("cls");
 		cout<<"          **    **                                                                          "<<endl;
-        cout<<"*************  *****************************************************************************"<<endl;
-        cout<<"*        *********                                                                         *"<<endl;
-        cout<<"*         *******                                                                          *"<<endl;
-        cout<<"*          *****                                                                           *"<<endl;
-        cout<<"*           ***                      Menï¿½ principal                                        *"<<endl;
-        cout<<"*            **                   1--gestionar Cliente                                     *"<<endl;
-        cout<<"*             *                   2--gestionar pedido                                      *"<<endl;
-        cout<<"*             *                   3--Gestion de Menu                                       *"<<endl;        
-        cout<<"*             *                   4--Venta del dia                                         *"<<endl;
-        cout<<"*             *                   5--agregar empleado                                      *"<<endl;
-        cout<<"*             *                   6--Info restaurante                                      *"<<endl;
-        cout<<"*             *                   7--Salir                                      			  *"<<endl;
-        
-    	cout<<"*              *                     valor:";cin>>flujo;
-        cout<<"*              *                                                                           *"<<endl;
-        cout<<"*           ***                                                                            *"<<endl;
-        cout<<"*          *                                                                               *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                  Menú Principal                                           *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Administrador.                                                                    *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*            **               [1]. Gestionar Cliente.                                      *"<<endl;
+        cout<<"*             *               [2]. Gestionar Pedido.                                       *"<<endl;
+        cout<<"*             *               [3]. Gestión de Menú.                                        *"<<endl;        
+        cout<<"*             *               [4]. Venta del día.                                          *"<<endl;
+        cout<<"*             *               [5]. Agregar Empleado.                                       *"<<endl;
+        cout<<"*             *               [6]. Info Restaurante.                                       *"<<endl;
+        cout<<"*             *               [7]. Salir.                                                  *"<<endl;
+    	cout<<"*Seleccione la opción deseada: ";cin>>flujo;
         system("cls");
-
     
         switch(flujo){
     
@@ -526,9 +534,6 @@ void Administrador(){
         case 6: break;
         case 7: flujo=100; break;
         
-       
-    
-        
         default:
         	cout<<"                	              *************************"<<endl;
        		cout<<"                               *   Valor Incorrecto    *"<<endl;
@@ -537,34 +542,28 @@ void Administrador(){
     }   
 
     }
-    
+
     //return 0;
 }
 
 
-
-
-
-
 void Empleado(){	
-    
+    setlocale(LC_CTYPE,"Spanish");
     
 	while(flujo!=100){
 		system("cls");
-		cout<<"          **    **                                                                         "<<endl;
-        cout<<"*************  *****************************************************************************"<<endl;
-        cout<<"*        *********                                                                         *"<<endl;
-        cout<<"*         *******                                                                          *"<<endl;
-        cout<<"*          *****                                                                           *"<<endl;
-        cout<<"*           ***                      Menu principal                                        *"<<endl;
-        cout<<"*            **                   1--gestionar Cliente                                     *"<<endl;
-        cout<<"*             *                   2--gestionar pedido                                      *"<<endl;
-        cout<<"*             *                   3--Salir                                                 *"<<endl;
-    	cout<<"*              *                     valor:";cin>>flujo;
-        cout<<"*              *                                                                           *"<<endl;
-        cout<<"*           ***                                                                            *"<<endl;
-        cout<<"*          *                                                                               *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
+		cout<<"          **    **                                                                          "<<endl;
+        cout<<" ************  **************************************************************************** "<<endl;
+        cout<<"*        *********                  O & J FOOD                                             *"<<endl;
+        cout<<"*         *******                   ==========                                             *"<<endl;
+        cout<<"*          *****                  Menú Principal                                           *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*Gestión Empleado.                                                                         *"<<endl;
+        cout<<"*------------------------------------------------------------------------------------------*"<<endl;
+        cout<<"*                              [1]. Gestionar Cliente.                                     *"<<endl;
+        cout<<"*                              [2]. Gestionar Pedido.                                      *"<<endl;
+        cout<<"*                              [3]. Salir.                                                 *"<<endl;
+    	cout<<"*    Seleccione la opción deseada: ";cin>>flujo	;
         system("cls");
 
     
@@ -610,7 +609,6 @@ void Empleado(){
         
         default:
         	
-        
         	cout<<"                	              *************************"<<endl;
        		cout<<"                               *   Valor Incorrecto    *"<<endl;
        		cout<<"                	              *************************"<<endl;
@@ -629,34 +627,33 @@ void Empleado(){
 
 
 
-
-
-
-
-
-
-
 void login(){
-	
+	setlocale(LC_CTYPE,"Spanish");
 	
 	while(flujo!=0){
 		string usuario, contrasena;
         flujo=999;
-	
-		
-		cout<<"                       Introduce tu usuario"<<endl;
-		cout<<"                       ";cin>>usuario;
-		cout<<"                       introudce tu contrasena"<<endl;
-		cout<<"                       ";cin>>contrasena;		
+        cout<<" ************  *****************************************************************************"<<endl;
+        cout<<"*        *********                     O & J FOOD                                           *"<<endl;
+        cout<<"*         *******           Desayunos, Almuerzos y Aperitivos.                              *"<<endl;
+        cout<<"*          *****    Copyright 2022 | Algoritmo y estructura de datos.                       *"<<endl;
+        cout<<"*********************************************************************************************"<<endl;
+        cout<<"*Iniciar Sección.                                                  by:2019-1416 & 2015-1666 *"<<endl;
+        cout<<"*===========================================================================================*"<<endl;
+        cout<<"==>Para acceder a la plataforma, ingresa las credenciales:"<<endl;
+		cout<<"          Introduzca el nombre de usuario"<<endl;
+		cout<<"        =>";cin>>usuario;
+		cout<<"          Introduzca la contraseña"<<endl;
+		cout<<"        =>";cin>>contrasena;		
 		
 		if(contrasena=="admin" && usuario=="admin"){
-            cout<<"                	                    *************************"<<endl;
+            cout<<"                	                    *************************a"<<endl;
 			Administrador();
-            cout<<"                	                    *************************"<<endl;
+            cout<<"                	                    *************************a"<<endl;
 		}
-		else{cout<<"                	                    *************************"<<endl;
+		else{cout<<"                	                 *************************e"<<endl;
 			Empleado();
-            cout<<"                	                    *************************"<<endl;
+            cout<<"                	                     *************************e"<<endl;
 		}
 	}
 
@@ -668,25 +665,9 @@ void login(){
     system("pause");
 }
 
-
 int main(){
 
     login();
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
