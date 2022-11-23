@@ -3,6 +3,16 @@
 4 mesa15 4 Leticia 51   450 pollo a la criolla 
 5 mesa1 1 gorge 51   450 pollo a la criolla 
 6  mesa16  2 Marcos  50   450 chofan con vegetales 
-
 7 mesa5 2 Marcos 50   450 chofan con vegetales 
 8 mesa5 3 Irania 51   450 pollo a la criolla 
+9 Mesa 5 3 Irania 50   450 chofan con vegetales 
+10 Mesa 5 4 Leticia 51   450 pollo a la criolla 
+11 Mesa 5 8   50   450 chofan con vegetales 
+12 Mesa8 5 jeanny 50   450 chofan con vegetales 
+13 Mesa8 9  50   450 chofan con vegetales 
+14 Mesa5 9 jeanny 50   450 chofan con vegetales 
+15 Mesa5 9 Leticia8   450 chofan con vegetales 
+16 Mesa8 5 jeanny50   450 chofan con vegetales 
+17 Mesa15 5 jeanny 51  450 pollo a la criolla 
+18 Mesa15 3 Irania 50  450 chofan con vegetales 
+19 Mesa15 1 gorge 51  450 pollo a la criolla 
