@@ -72,7 +72,6 @@ int autoIdclient(){
 	
 	ifstream archivo;
 	archivo.open("cliente.txt",ios::in);
-	
 
 	if(archivo.fail()){
 		cout<<"No se encontro dato para filtrar."<<endl;
@@ -94,6 +93,145 @@ int autoIdclient(){
 
 	return idClient;
 }
+
+
+
+
+
+void eliminarCliente(){
+	setlocale(LC_CTYPE,"Spanish");
+	system("cls");
+	
+	
+    string nombreClient, apellidoClient, contactoClient, idClient, filtro, filtro2;
+    int opc;
+    
+	ifstream archivo;
+	archivo.open("cliente.txt",ios::in);
+	ofstream aux("clienteaux.txt",ios::out | ios::app);
+	
+	cout<<"                 Introduce el id del cliente a eliminar."<<endl;
+	cout<<"                 :."; cin>>filtro;
+	
+	while(!archivo.eof()){
+		
+		
+		
+		archivo>>idClient;
+		archivo>>nombreClient;
+        archivo>>apellidoClient;
+        archivo>>contactoClient;
+        if(idClient==filtro2 )break;
+        
+        
+        if(idClient==filtro ){
+        	
+        	
+        	cout<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;	
+			continue;				   
+		}
+		else{
+			aux<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
+			filtro2=idClient;	
+		}
+				
+	}
+	
+	
+	archivo.close();
+	aux.close();
+	remove("cliente.txt");
+	rename("clienteaux.txt","cliente.txt");
+
+	system("pause");
+	
+}
+
+
+
+
+
+
+void editarCliente(){
+	setlocale(LC_CTYPE,"Spanish");
+	system("cls");
+	
+	
+    string nombreClient, apellidoClient, contactoClient, idClient, filtro, filtro2;
+    int opc;
+    
+	ifstream archivo;
+	archivo.open("cliente.txt",ios::in);
+	ofstream aux("clienteaux.txt",ios::out | ios::app);
+	
+	cout<<"                 Introduce el id del cliente a editar."<<endl;
+	cin>>filtro;
+	
+	while(!archivo.eof()){
+		
+		
+		
+		archivo>>idClient;
+		archivo>>nombreClient;
+        archivo>>apellidoClient;
+        archivo>>contactoClient;
+        if(idClient==filtro2 )break;
+        
+        
+        if(idClient==filtro ){
+        	
+        	
+        	cout<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
+        	
+        	cout<<"que quieres modificar"<<endl;
+        	cout<<"1--nombre"<<endl;
+        	cout<<"2--apellido"<<endl;
+        	cout<<"3--telefono"<<endl;
+        	cout<<"4--ninguno"<<endl;
+        	cin>>opc;
+        	
+        	switch(opc){
+        		case 1:
+					cout<<"Introduce el nuevo nombre"<<endl;
+					cin>>nombreClient; break;
+        		case 2:
+        			cout<<"Introduce el nuevo apellido"<<endl;
+					cin>>apellidoClient; break;
+        		case 3:
+					cout<<"Introduce el nuevo contacto"<<endl;
+					cin>>contactoClient; break;
+				case 4:
+					cout<<"cancelando"<<endl;
+					 break;	
+					
+        		default: 
+					cout<<"este no es un numero valido"; break;	
+			}
+			aux<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
+			filtro2=idClient;
+								   
+		}
+		else{
+			aux<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
+			filtro2=idClient;	
+		}
+				
+	}
+	
+	
+	archivo.close();
+	aux.close();
+	remove("cliente.txt");
+	rename("clienteaux.txt","cliente.txt");
+
+	system("pause");
+	
+}
+
+
+
+
+
 
 void agregarCliente(){
 	setlocale(LC_CTYPE,"Spanish");
@@ -138,7 +276,7 @@ string filtrarCliente(){
     string nombreClient, apellidoClient, contactoClient, idClient, filtro, filtro2;
 	ifstream archivo;
 	archivo.open("cliente.txt",ios::in);
-	cout<<"									Introduce ID, Tel�fono, Nombre o Apellido."<<endl;
+	cout<<"                Introduce ID, Tel�fono, Nombre o Apellido."<<endl;
     cout<< "                               ";  cin>>filtro;
 
 	if(archivo.fail()){
@@ -155,7 +293,7 @@ string filtrarCliente(){
 
          if(filtro==nombreClient || filtro==apellidoClient || filtro==contactoClient){
 		  	
-            cout<<"				"<<idClient<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
+            cout<<idClient<<"	"<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
             
             archivo>>nombreClient;
        }
@@ -376,7 +514,6 @@ void ponerOrden(){
 		if(nomClient==""){
 			cout<<"                               No existe, busca el correcto."<<endl;
 		}
-	
 	}
 	
 	
@@ -407,6 +544,7 @@ numPedido=numOrden();//para conseguir el numero de pedido
 
 
 
+
 void Cliente(){
 	setlocale(LC_CTYPE,"Spanish");
 
@@ -430,11 +568,11 @@ while(flujo!=101){
         switch(flujo){
             case 1: agregarCliente(); break;
         
-            case 2:break;
+            case 2:editarCliente(); break;
           
             case 3: filtrarCliente(); break;
           
-            case 4:break;
+            case 4:eliminarCliente(); break;
           
             case 5: flujo=101; break;
 
@@ -448,6 +586,9 @@ while(flujo!=101){
     }    
 	system("cls");
 }
+
+
+
 
 void Pedido(){
 	
@@ -702,6 +843,9 @@ void login(){
 
     system("pause");
 }
+
+
+
 
 int main(){
 

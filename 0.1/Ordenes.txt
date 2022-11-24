@@ -16,3 +16,4 @@
 17 Mesa15 5 jeanny 51  450 pollo a la criolla 
 18 Mesa15 3 Irania 50  450 chofan con vegetales 
 19 Mesa15 1 gorge 51  450 pollo a la criolla 
+20 Mesa8 5 jeanny 50  450 chofan con vegetales 
