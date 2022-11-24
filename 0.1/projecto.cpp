@@ -27,7 +27,6 @@ void Carga(){
 }
 
 void addtoMenu(){
-	setlocale(LC_CTYPE,"Spanish");
 	
 	while(flujo==2){
 		system("cls");
@@ -99,7 +98,6 @@ int autoIdclient(){
 
 
 void eliminarCliente(){
-	setlocale(LC_CTYPE,"Spanish");
 	system("cls");
 	
 	
@@ -153,7 +151,6 @@ void eliminarCliente(){
 
 
 void editarCliente(){
-	setlocale(LC_CTYPE,"Spanish");
 	system("cls");
 	
 	
@@ -312,7 +309,6 @@ string filtrarCliente(){
 
 
 void gestionMenu(){
-	setlocale(LC_CTYPE,"Spanish");
 	
     while(flujo!=101){
         system("cls");
@@ -421,8 +417,6 @@ string getClient(int filtro){
 	string nomClient, apellClient, telClient, nameBack;
 	int idClient;
 
-		
-	
 	ifstream archivo;
 	archivo.open("cliente.txt",ios::in);
 	
@@ -447,10 +441,6 @@ string getClient(int filtro){
 		}
         //cout<<idClient<<" "<<nomClient<<" "<<apellClient<<telClient<<endl;
 	}
-	
-
-	
-	
 
 	return nameBack;
 
@@ -487,13 +477,148 @@ string numeroMesa(int mesa){
 }
 
 
+
+
+int filtrarPedido(){
+    string mesa, numPedido, idClient, idPlato, filtro, idfiltro;
+	string valorMesa, nomClient, nomPlato; 
+	int cont;
+	ifstream archivo;
+	
+	archivo.open("Ordenes.txt",ios::in);
+	cout<<"           Itroduce el numero de la mesa, el id del cliente o el nombre del cliente para filtrar"<<endl;
+    cout<< "                               ";  cin>>filtro;
+
+	if(archivo.fail()){
+		cout<<"No se contro dato para filtral."<<endl;
+		//exit(1);
+	}
+    
+    cin.ignore(1000,'\n');
+	while(!archivo.eof()){
+		
+		archivo>>numPedido;
+		archivo>>valorMesa;
+        archivo>>idClient;
+        archivo>>nomClient;
+        archivo>>idPlato;
+        getline(archivo,nomPlato);
+
+        if(filtro==valorMesa || filtro==nomClient || filtro==idClient){
+		  	
+            cout<<"           "<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n"; 
+            cont=cont+1;
+       }
+	}
+	
+	
+	archivo.close();
+	system("pause");
+	return cont;
+}
+
+
+
+
+
+
+
+
+
+void updatePedido(){
+	
+	int mesa, numPedido, idClient, idPlato, filtro, idfiltro;
+	string valorMesa, nomClient, nomPlato; 
+	filtrarPedido();
+    int opc;
+    
+	ifstream archivo;
+	archivo.open("Ordenes.txt",ios::in);
+	ofstream aux("Ordenesaux.txt",ios::out | ios::app);
+	
+	cout<<"                 Introduce  el Id de la orden a editar."<<endl;
+	cout<<"                 :";cin>>filtro;
+	
+	cin.ignore(1000,'\n');
+	while(!archivo.eof()){
+		
+		archivo>>numPedido;
+		archivo>>valorMesa;
+        archivo>>idClient;
+        archivo>>nomClient;
+        archivo>>idPlato;
+        getline(archivo,nomPlato);
+        
+        if(numPedido==idfiltro )break;
+
+
+
+        if(numPedido==filtro ){
+        	
+        	
+        	cout<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
+        	
+        	cout<<"que quieres modificar"<<endl;
+        	cout<<"1--Cambiar pedido"<<endl;
+        	cout<<"2--Mover orden otra mesa mesa"<<endl;
+        	cout<<"3--Pasar Oden a otro cliete"<<endl;
+        	cout<<"4--No hacer nada"<<endl;
+        	cin>>opc;
+        	
+        	switch(opc){
+        		case 1:
+        			while(nomPlato==""){
+						cout<<"                                   Coloca el pedido solicitado"<<endl;
+						cout<<"                                   "; cin>>idPlato;
+						nomPlato=getPedido(idPlato);
+						if(nomPlato==""){
+						cout<<"                               Este plato no existe."<<endl;
+						}
+					}		
+        		case 2:
+        			cout<<"         Selecciona el numero de mesa a la cual asignar la orden (1 al 17)"<<endl;
+					cout<<"                                   ";cin>>mesa;
+					valorMesa=numeroMesa(mesa);//para colocar orden en una mesa
+        		case 3:
+        			while(nomClient==""){
+						cout<<"                                   Introduce el ID Del Cliente"<<endl;
+						cout<<"                                   "; cin>>idClient;
+						nomClient=getClient(idClient);//para colocar el nombre y el id del cliente
+						if(nomClient==""){
+							cout<<"                               No existe, busca el correcto."<<endl;
+					}
+				}
+					
+				case 4:
+				break;		
+        		default: cout<<"este no es un numero valido"; break;	
+			}
+			aux<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
+			idfiltro=numPedido;							   
+		}
+		else{
+			aux<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
+			idfiltro=numPedido;
+		}
+	}
+	
+	archivo.close();
+	aux.close();
+	remove("Ordenes.txt");
+	rename("Ordenesaux.txt","Ordenes.txt");
+	system("cls");
+	system("pause");
+}
+
+
+
+
+
+
 void ponerOrden(){
 	int mesa, numPedido, idClient, idPlato;
 	string valorMesa, nomClient, nomPlato; 
 
-
-
-	setlocale(LC_CTYPE,"Spanish");
 		system("cls");
 	
 	ofstream archivo;
@@ -504,6 +629,7 @@ void ponerOrden(){
 	cout<<"         Selecciona el n�mero de mesa a la cu�l asignar�s la orden (1 al 17)"<<endl;
 	cout<<"                                   ";cin>>mesa;
 	valorMesa=numeroMesa(mesa);//para colocar orden en una mesa
+	
 	
 	while(nomClient==""){
 	
@@ -546,7 +672,6 @@ numPedido=numOrden();//para conseguir el numero de pedido
 
 
 void Cliente(){
-	setlocale(LC_CTYPE,"Spanish");
 
 while(flujo!=101){
         system("cls");
@@ -591,8 +716,6 @@ while(flujo!=101){
 
 
 void Pedido(){
-	
-	setlocale(LC_CTYPE,"Spanish");
     while(flujo!=101){
     	system("cls");
         cout<<" ************  **************************************************************************** "<<endl;
@@ -603,10 +726,10 @@ void Pedido(){
         cout<<"*Gesti�n Administrador.                                                                    *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
 		cout<<"*                            [1]. Agregar Orden                                            *"<<endl;
-		cout<<"*                            [2]. IDCliente                                                *"<<endl;
-		cout<<"*                            [3]. Men� de Comida                                           *"<<endl;
+		cout<<"*                            [2]. Actualizar pedido                                        *"<<endl;
+		cout<<"*                            [3]. Filtra pedido                                           *"<<endl;
 		cout<<"*                            [4]. Factura.                                                 *"<<endl;
-		cout<<"*                            [6]. Actualizar pedido                                        *"<<endl;
+		cout<<"*                            [6].                                                          *"<<endl;
 		cout<<"*                            [7]. Eliminar pedido                                          *"<<endl;
 		cout<<"*                            [8]. Volver al men� principal                                 *"<<endl;
 		cout<<"*                            [9]. Men� principal                                           *"<<endl;
@@ -616,9 +739,11 @@ void Pedido(){
     	switch(flujo){
         	case 1: ponerOrden(); break;
           
-        	case 2:break;
+        	case 2:system("cls");
+				updatePedido(); break;
         
-        	case 3:break;
+        	case 3:system("cls");
+				filtrarPedido(); break;
           
         	case 4:break;
           
@@ -645,7 +770,6 @@ void Pedido(){
 
 
 void Administrador(){	
-    setlocale(LC_CTYPE,"Spanish");
     
     while(flujo!=100){
 		system("cls");
@@ -726,7 +850,6 @@ void Administrador(){
 
 
 void Empleado(){	
-    setlocale(LC_CTYPE,"Spanish");
     
 	while(flujo!=100){
 		system("cls");
@@ -806,7 +929,6 @@ void Empleado(){
 
 
 void login(){
-	setlocale(LC_CTYPE,"Spanish");
 	
 	while(flujo!=0){
 		string usuario, contrasena;
