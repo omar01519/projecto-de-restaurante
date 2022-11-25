@@ -1,0 +1,3 @@
+Este es el manual de usuario para comenzar la instalacion
+
+Es una prueba solo para determinar que corresponde a esto!
