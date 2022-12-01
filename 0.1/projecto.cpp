@@ -1048,7 +1048,7 @@ void login(){
         cout<<"*         *******           Desayunos, Almuerzos y Aperitivos.                              *"<<endl;
         cout<<"*          *****    Copyright 2022 | Algoritmo y estructura de datos.                       *"<<endl;
         cout<<"*********************************************************************************************"<<endl;
-        cout<<"*Iniciar Secci�n.                                                  by:2019-1416 & 2015-1666 *"<<endl;
+        cout<<"*Iniciar Secci�n.                                                by:2019-1416 & 2015-1666 *"<<endl;
         cout<<"*===========================================================================================*"<<endl;
         cout<<"==>Para acceder a la plataforma, ingresa las credenciales:"<<endl;
 		cout<<"          Introduzca el nombre de usuario"<<endl;

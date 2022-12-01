@@ -1,1 +1,10 @@
+Manual de Uso:
+
+Al finalizar la instalación podrá ejecutar el programa.
+
+Para el uso del mismo, utilizar el teclada para ingresar informaciones en el mismo
+y de igual forma para navegar entre las opciones y los diferentes menú.
+
+
 Gracias por instalar nuestro programa!
+
