@@ -35,7 +35,7 @@ void addtoMenu(){
 		char nombrePlato[20];
 		int precioPlato, idPlato;
 	
-		cout<<"                             Introduce los datos solicitados del men�."<<endl;
+		cout<<"                             Introduce los datos solicitados del menu."<<endl;
 	
 		if(archivo.fail()){
 		cout<<"                               No se pudo crear el archivo."<<endl;
@@ -56,7 +56,7 @@ void addtoMenu(){
 	
 		system("cls");
 	
-		cout<<"El plato fue a�adido con exito."<<endl;
+		cout<<"El plato fue aniadido con exito."<<endl;
 
 		system("pause");
 	}
@@ -108,7 +108,7 @@ void eliminarCliente(){
 	archivo.open("cliente.txt",ios::in);
 	ofstream aux("clienteaux.txt",ios::out | ios::app);
 	
-	cout<<"                 Introduce el id del cliente a eliminar."<<endl;
+	cout<<"                 Introduce el ID del cliente a eliminar."<<endl;
 	cout<<"                 :."; cin>>filtro;
 	
 	while(!archivo.eof()){
@@ -166,7 +166,7 @@ void editarCliente(){
 	archivo.open("cliente.txt",ios::in);
 	ofstream aux("clienteaux.txt",ios::out | ios::app);
 	
-	cout<<"                 Introduce el id del cliente a editar."<<endl;
+	cout<<"                 Introduce el TD del cliente a editar."<<endl;
 	cin>>filtro;
 	
 	while(!archivo.eof()){
@@ -185,11 +185,11 @@ void editarCliente(){
         	
         	cout<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
         	
-        	cout<<"que quieres modificar"<<endl;
-        	cout<<"1--nombre"<<endl;
-        	cout<<"2--apellido"<<endl;
-        	cout<<"3--telefono"<<endl;
-        	cout<<"4--ninguno"<<endl;
+        	cout<<"Que deseas modificar:"<<endl;
+        	cout<<"[1]. Nombre."<<endl;
+        	cout<<"[2]. Apellido."<<endl;
+        	cout<<"[3]. Telefono."<<endl;
+        	cout<<"[4]. Ninguno."<<endl;
         	cin>>opc;
         	
         	switch(opc){
@@ -203,11 +203,11 @@ void editarCliente(){
 					cout<<"Introduce el nuevo contacto"<<endl;
 					cin>>contactoClient; break;
 				case 4:
-					cout<<"cancelando"<<endl;
+					cout<<"Cancelando"<<endl;
 					 break;	
 					
         		default: 
-					cout<<"este no es un numero valido"; break;	
+					cout<<"Este no es un numero valido."; break;	
 			}
 			aux<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
 			filtro2=idClient;
@@ -259,7 +259,7 @@ void agregarCliente(){
 	cout<<"                                  Apellido de Cliente"<<endl;
 	cout<<"                                 "; cin>>apellidoClient;
 	
-	cout<<"                                  N�mero telef�nico"<<endl;
+	cout<<"                                  Numero telefonico"<<endl;
 	cout<<"                                  "; cin>>contactoClient;
 	
 	archivo<<idClient<<" "<<nombreClient<<" "<<apellidoClient<<" "<<contactoClient<<endl;
@@ -278,11 +278,11 @@ string filtrarCliente(){
     string nombreClient, apellidoClient, contactoClient, idClient, filtro, filtro2;
 	ifstream archivo;
 	archivo.open("cliente.txt",ios::in);
-	cout<<"                Introduce ID, Tel�fono, Nombre o Apellido."<<endl;
+	cout<<"                Introduce ID, Telefono, Nombre o Apellido."<<endl;
     cout<< "                               ";  cin>>filtro;
 
 	if(archivo.fail()){
-		cout<<"No se contro dato para filtral."<<endl;
+		cout<<"No se contro dato para filtra."<<endl;
 		//exit(1);
 	}
     
@@ -320,15 +320,15 @@ void gestionMenu(){
         cout<<" ************  **************************************************************************** "<<endl;
         cout<<"*        *********                  O & J FOOD                                             *"<<endl;
         cout<<"*         *******                   ==========                                             *"<<endl;
-        cout<<"*          *****                   Gesti�n Men�                                            *"<<endl;
+        cout<<"*          *****                   Gestion Menu                                            *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
-        cout<<"*Gesti�n Administrador.                                                                    *"<<endl;
+        cout<<"*Gestion Administrador.                                                                    *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
-	    cout<<"*                                 [1]. Ver Men�.                                           *"<<endl;
+	    cout<<"*                                 [1]. Ver Menu.                                           *"<<endl;
         cout<<"*                                 [2]. Agregar Plato.                                      *"<<endl;
         cout<<"*                                 [3]. Quitar Plato.                                       *"<<endl;
         cout<<"*                                 [4]. Modificar Plato.                                    *"<<endl;
-        cout<<"*                                 [5]. Men� Principal.                                     *"<<endl;
+        cout<<"*                                 [5]. Menu Principal.                                     *"<<endl;
         cout<<"*                                 [6]. Salir.                                              *"<<endl;
         cout<<"    Seleccione la opci�n deseada: ";cin>>flujo;
       
@@ -347,7 +347,7 @@ void gestionMenu(){
             case 6: flujo=100; break; 
 
             default:
-            cout<<"                               Valor Incorrecto"<<endl;   
+            cout<<"                               Valor Incorrecto."<<endl;   
         }
         if(flujo==100) break;
     }    
@@ -397,7 +397,7 @@ int numOrden(){
 	archivo.open("Ordenes.txt",ios::in);	
 
 	if(archivo.fail()){
-		cout<<"No se encontr� dato para filtrar."<<endl;
+		cout<<"No se encontro dato para filtrar."<<endl;
 		//exit(1);
 	}
 	
@@ -424,11 +424,11 @@ int filtrarPedido(){
 	ifstream archivo;
 	
 	archivo.open("Ordenes.txt",ios::in);
-	cout<<"           Itroduce el numero de la mesa, el id del cliente o el nombre del cliente para filtrar"<<endl;
+	cout<<"           Itroduce el numero de la mesa, el TD del cliente o el nombre del cliente para filtrar:"<<endl;
     cout<< "                               ";  cin>>filtro;
 
 	if(archivo.fail()){
-		cout<<"No se contro dato para filtral."<<endl;
+		cout<<"No se contro dato para filtra."<<endl;
 		//exit(1);
 	}
     
@@ -474,7 +474,7 @@ string getClient(int filtro){
 	
 
 	if(archivo.fail()){
-		cout<<"No se encontr� dato para filtrar."<<endl;
+		cout<<"No se encontro dato para filtrar."<<endl;
 		//exit(1);
 	}
 	
@@ -556,7 +556,7 @@ void updatePedido(){
 	archivo.open("Ordenes.txt",ios::in);
 	ofstream aux("Ordenesaux.txt",ios::out | ios::app);
 	
-	cout<<"                 Introduce  el Id de la orden a editar."<<endl;
+	cout<<"                 Introduce  el ID de la orden a editar."<<endl;
 	cout<<"                 :";cin>>filtro;
 	
 	cin.ignore(1000,'\n');
@@ -578,11 +578,11 @@ void updatePedido(){
         	
         	cout<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
         	
-        	cout<<"que quieres modificar"<<endl;
-        	cout<<"1--Cambiar pedido"<<endl;
-        	cout<<"2--Mover orden a otra mesa"<<endl;
-        	cout<<"3--Pasar Oden a otro cliete"<<endl;
-        	cout<<"4--No hacer nada"<<endl;
+        	cout<<"Que quieres modificar:"<<endl;
+        	cout<<"[1]. Cambiar pedido."<<endl;
+        	cout<<"[2]. Mover orden a otra mesa."<<endl;
+        	cout<<"[3]. Pasar orden a otro cliente."<<endl;
+        	cout<<"[4]. No hacer nada."<<endl;
         	cin>>opc;
         	
         	switch(opc){
@@ -611,7 +611,7 @@ void updatePedido(){
 					
 				case 4:
 				break;		
-        		default: cout<<"este no es un numero valido"; break;	
+        		default: cout<<"Este no es un numero valido"; break;	
 			}
 			aux<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
 			idfiltro=numPedido;							   
@@ -728,9 +728,9 @@ void Cobrar(){
 	archivo.open("Ordenes.txt",ios::in);
 	
 	cout<<"Seleccion de Pago"<<endl;
-    cout<<"1--Pagar mesa completa"<<endl;
-    cout<<"2--Pagar solo un cliente"<<endl;
-    cout<<"4--No hacer nada"<<endl;
+    cout<<"[1]. Pagar mesa completa"<<endl;
+    cout<<"[2]. Pagar solo un cliente"<<endl;
+    cout<<"[4]. No hacer nada"<<endl;
     cin>>opc;
     
     
@@ -780,10 +780,10 @@ void Cobrar(){
 	
 	
 	if(conf==1){
-		cout<<"La orden fue cobrada con exito"<<endl;
+		cout<<"La orden fue cobrada con exito."<<endl;
 	}
 	else{
-		cout<<"El nombre del cliente esta mal escrito o no existe en esta mesa"<<endl;
+		cout<<"El nombre del cliente esta mal escrito o no existe en esta mesa."<<endl;
 	}
 	
 	archivo.close();
@@ -810,15 +810,15 @@ while(flujo!=101){
         cout<<"*         *******                   ==========                                             *"<<endl;
         cout<<"*          *****                   Men� Clientes                                           *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
-        cout<<"*Gesti�n Administrador.                                                                    *"<<endl;
+        cout<<"*Gestion Administrador.                                                                    *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
 	    cout<<"*                             [1]. Agregar Clientes.                                       *"<<endl;
         cout<<"*                             [2]. Actualizar Clientes.                                    *"<<endl;
         cout<<"*                             [3]. Filtrar Clientes.                                       *"<<endl;
         cout<<"*                             [4]. Eliminar.                                               *"<<endl;
-        cout<<"*                             [5]. Men� Principal.                                         *"<<endl;
+        cout<<"*                             [5]. Menu Principal.                                         *"<<endl;
         cout<<"*                             [6]. Salir.                                                  *"<<endl;
-		cout<<"Seleccione la opci�n deseada: ";cin>>flujo;
+		cout<<"Seleccione la opcion deseada: ";cin>>flujo;
       
         switch(flujo){
             case 1: agregarCliente(); break;
@@ -834,7 +834,7 @@ while(flujo!=101){
             case 6: flujo=100; break; 
 
             default:
-            cout<<"                               Valor Incorrecto"<<endl;   
+            cout<<"                               Valor Incorrecto."<<endl;   
         }
         if(flujo==100) break;
 
@@ -851,20 +851,20 @@ void Pedido(){
         cout<<" ************  **************************************************************************** "<<endl;
         cout<<"*        *********                  O & J FOOD                                             *"<<endl;
         cout<<"*         *******                   ==========                                             *"<<endl;
-        cout<<"*          *****                   Men� Pedidos                                            *"<<endl;
+        cout<<"*          *****                   Menu Pedidos                                            *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
-        cout<<"*Gesti�n Administrador.                                                                    *"<<endl;
+        cout<<"*Gestion Administrador.                                                                    *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
 		cout<<"*                            [1]. Agregar Orden                                            *"<<endl;
 		cout<<"*                            [2]. Actualizar pedido                                        *"<<endl;
-		cout<<"*                            [3]. Filtra pedido                                           *"<<endl;
+		cout<<"*                            [3]. Filtra pedido                                            *"<<endl;
 		cout<<"*                            [4]. Factura.                                                 *"<<endl;
 		cout<<"*                            [6].                                                          *"<<endl;
 		cout<<"*                            [7]. Eliminar pedido                                          *"<<endl;
-		cout<<"*                            [8]. Volver al men� principal                                 *"<<endl;
-		cout<<"*                            [9]. Men� principal                                           *"<<endl;
-		cout<<"*                            [10]. Salir.                                                   *"<<endl;
-		cout<<"Seleccione la opci�n deseada: ";cin>>flujo;
+		cout<<"*                            [8]. Volver al menu principal                                 *"<<endl;
+		cout<<"*                            [9]. Menu principal                                           *"<<endl;
+		cout<<"*                            [10]. Salir.                                                  *"<<endl;
+		cout<<"Seleccione la opcion deseada: ";cin>>flujo;
     
     	switch(flujo){
         	case 1: ponerOrden(); break;
@@ -910,19 +910,19 @@ void Administrador(){
         cout<<" ************  **************************************************************************** "<<endl;
         cout<<"*        *********                  O & J FOOD                                             *"<<endl;
         cout<<"*         *******                   ==========                                             *"<<endl;
-        cout<<"*          *****                  Men� Principal                                           *"<<endl;
+        cout<<"*          *****                  Menu Principal                                           *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
-        cout<<"*Gesti�n Administrador.                                                                    *"<<endl;
+        cout<<"*Gestion Administrador.                                                                    *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
         cout<<"*            **               [1]. Gestionar Cliente.                                      *"<<endl;
         cout<<"*             *               [2]. Gestionar Pedido.                                       *"<<endl;
         cout<<"*             *               [3]. Gestion de Menu.                                        *"<<endl;
-        cout<<"*             *               [4]. Cobrar.                                        *"<<endl;		        
+        cout<<"*             *               [4]. Cobrar.                                                 *"<<endl;		        
         cout<<"*             *               [5]. Venta del dia.                                          *"<<endl;
         cout<<"*             *               [6]. Agregar Empleado.                                       *"<<endl;
         cout<<"*             *               [7]. Info Restaurante.                                       *"<<endl;
         cout<<"*             *               [8]. Salir.                                                  *"<<endl;
-    	cout<<"*Seleccione la opci�n deseada: ";cin>>flujo;
+    	cout<<"*Seleccione la opcion deseada: ";cin>>flujo;
         system("cls");
     
         switch(flujo){
@@ -966,14 +966,14 @@ void Empleado(){
         cout<<" ************  **************************************************************************** "<<endl;
         cout<<"*        *********                  O & J FOOD                                             *"<<endl;
         cout<<"*         *******                   ==========                                             *"<<endl;
-        cout<<"*          *****                  Men� Principal                                           *"<<endl;
+        cout<<"*          *****                  Menu Principal                                           *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
-        cout<<"*Gesti�n Empleado.                                                                         *"<<endl;
+        cout<<"*Gestion Empleado.                                                                         *"<<endl;
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
         cout<<"*                              [1]. Gestionar Cliente.                                     *"<<endl;
         cout<<"*                              [2]. Gestionar Pedido.                                      *"<<endl;
         cout<<"*                              [3]. Salir.                                                 *"<<endl;
-    	cout<<"*    Seleccione la opci�n deseada: ";cin>>flujo	;
+    	cout<<"*  Seleccione la opcion deseada: ";cin>>flujo	;
         system("cls");
 
     
@@ -1048,12 +1048,12 @@ void login(){
         cout<<"*         *******           Desayunos, Almuerzos y Aperitivos.                              *"<<endl;
         cout<<"*          *****    Copyright 2022 | Algoritmo y estructura de datos.                       *"<<endl;
         cout<<"*********************************************************************************************"<<endl;
-        cout<<"*Iniciar Secci�n.                                                by:2019-1416 & 2015-1666 *"<<endl;
+        cout<<"*Iniciar Seccion.                                                  by:2019-1416 & 2015-1666 *"<<endl;
         cout<<"*===========================================================================================*"<<endl;
         cout<<"==>Para acceder a la plataforma, ingresa las credenciales:"<<endl;
 		cout<<"          Introduzca el nombre de usuario"<<endl;
 		cout<<"        =>";cin>>usuario;
-		cout<<"          Introduzca la contrase�a"<<endl;
+		cout<<"          Introduzca la contrasena"<<endl;
 		cout<<"        =>";cin>>contrasena;		
 		
 		if(contrasena=="admin" && usuario=="admin"){
