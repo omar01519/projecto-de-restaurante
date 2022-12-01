@@ -150,6 +150,11 @@ void eliminarCliente(){
 
 
 
+
+
+
+
+
 void editarCliente(){
 	system("cls");
 	
@@ -412,6 +417,53 @@ int numOrden(){
 
 
 
+int filtrarPedido(){
+    string mesa, numPedido, idClient, idPlato, filtro, idfiltro;
+	string valorMesa, nomClient, nomPlato; 
+	int cont;
+	ifstream archivo;
+	
+	archivo.open("Ordenes.txt",ios::in);
+	cout<<"           Itroduce el numero de la mesa, el id del cliente o el nombre del cliente para filtrar"<<endl;
+    cout<< "                               ";  cin>>filtro;
+
+	if(archivo.fail()){
+		cout<<"No se contro dato para filtral."<<endl;
+		//exit(1);
+	}
+    
+    cin.ignore(1000,'\n');
+	while(!archivo.eof()){
+		
+		archivo>>numPedido;
+		archivo>>valorMesa;
+        archivo>>idClient;
+        archivo>>nomClient;
+        archivo>>idPlato;
+        getline(archivo,nomPlato);
+
+        if(filtro==valorMesa || filtro==nomClient || filtro==idClient){
+		  	
+            cout<<"           "<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n"; 
+            cont=cont+1;
+       }
+	}
+	
+	
+	archivo.close();
+	system("pause");
+	return cont;
+}
+
+
+
+
+
+
+
+
+
+
 
 string getClient(int filtro){
 	string nomClient, apellClient, telClient, nameBack;
@@ -479,43 +531,11 @@ string numeroMesa(int mesa){
 
 
 
-int filtrarPedido(){
-    string mesa, numPedido, idClient, idPlato, filtro, idfiltro;
-	string valorMesa, nomClient, nomPlato; 
-	int cont;
-	ifstream archivo;
-	
-	archivo.open("Ordenes.txt",ios::in);
-	cout<<"           Itroduce el numero de la mesa, el id del cliente o el nombre del cliente para filtrar"<<endl;
-    cout<< "                               ";  cin>>filtro;
 
-	if(archivo.fail()){
-		cout<<"No se contro dato para filtral."<<endl;
-		//exit(1);
-	}
-    
-    cin.ignore(1000,'\n');
-	while(!archivo.eof()){
-		
-		archivo>>numPedido;
-		archivo>>valorMesa;
-        archivo>>idClient;
-        archivo>>nomClient;
-        archivo>>idPlato;
-        getline(archivo,nomPlato);
 
-        if(filtro==valorMesa || filtro==nomClient || filtro==idClient){
-		  	
-            cout<<"           "<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n"; 
-            cont=cont+1;
-       }
-	}
-	
-	
-	archivo.close();
-	system("pause");
-	return cont;
-}
+
+
+
 
 
 
@@ -560,7 +580,7 @@ void updatePedido(){
         	
         	cout<<"que quieres modificar"<<endl;
         	cout<<"1--Cambiar pedido"<<endl;
-        	cout<<"2--Mover orden otra mesa mesa"<<endl;
+        	cout<<"2--Mover orden a otra mesa"<<endl;
         	cout<<"3--Pasar Oden a otro cliete"<<endl;
         	cout<<"4--No hacer nada"<<endl;
         	cin>>opc;
@@ -626,7 +646,7 @@ void ponerOrden(){
 	
 	//getHorapedido();
 	
-	cout<<"         Selecciona el n�mero de mesa a la cu�l asignar�s la orden (1 al 17)"<<endl;
+	cout<<"         Selecciona el numero de mesa a la cual asignaras la orden (1 al 17)"<<endl;
 	cout<<"                                   ";cin>>mesa;
 	valorMesa=numeroMesa(mesa);//para colocar orden en una mesa
 	
@@ -667,6 +687,116 @@ numPedido=numOrden();//para conseguir el numero de pedido
 	system("pause");
 
 }
+
+
+//////////////////////////////////////////////////////////////////////////////
+void Cobrar(){
+	
+	int mesa,idClient, idPlato, numPedido, idfiltro, conf;
+	string valorMesa, nomClient, nomPlato,  filtro,  filtroNom, nomMesa; 
+    int opc;
+    
+	ifstream archivo;
+	archivo.open("Ordenes.txt",ios::in);
+	ofstream aux("Ordenesaux.txt",ios::out | ios::app);
+	ofstream venta("Venta.txt",ios::out | ios::app);
+	
+	
+	
+	cout<<"         Introduzca el numero de mesa que le gustaria pagar del (1 al 17)"<<endl;
+	cout<<"                                   ";cin>>mesa;
+	nomMesa=numeroMesa(mesa);//para colocar orden en una mesa
+	
+	
+	cin.ignore(1000,'\n');
+	while(!archivo.eof()){
+		
+		archivo>>numPedido;
+		archivo>>valorMesa;
+        archivo>>idClient;
+        archivo>>nomClient;
+        archivo>>idPlato;
+        getline(archivo,nomPlato);    
+
+        if(nomMesa==valorMesa){
+		  	
+            cout<<"           "<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n"; 
+       } 
+	}
+	archivo.close();
+	
+	archivo.open("Ordenes.txt",ios::in);
+	
+	cout<<"Seleccion de Pago"<<endl;
+    cout<<"1--Pagar mesa completa"<<endl;
+    cout<<"2--Pagar solo un cliente"<<endl;
+    cout<<"4--No hacer nada"<<endl;
+    cin>>opc;
+    
+    
+    if(opc==2){
+    cout<<"introduce el nombre del cliente al cual le quieres cobrar"<<endl;
+    cin>>filtroNom;
+	}
+	
+	
+	cin.ignore(1000,'\n');
+	while(!archivo.eof()){
+		
+		archivo>>numPedido;
+		archivo>>valorMesa;
+        archivo>>idClient;
+        archivo>>nomClient;
+        archivo>>idPlato;
+        getline(archivo,nomPlato);
+        //if(idfiltro==numPedido)break;
+        
+        
+        if(opc==1){
+        	if(nomMesa==valorMesa){
+        		venta<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";	
+        		conf=1;
+			} 	
+			else{
+        		aux<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
+				idfiltro=numPedido;
+			}
+		} 
+		else if(opc==2){	
+			if(nomMesa==valorMesa && filtroNom== nomClient){
+        		venta<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";	
+        		conf=1;
+			} 	
+			else{
+        		aux<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
+				idfiltro=numPedido;	
+			}
+		}
+		else{
+			aux<<numPedido<<" "<<valorMesa<<" "<<idClient<<" "<<nomClient<<" "<<idPlato<<" "<<nomPlato<<"\n";
+			idfiltro=numPedido;	
+		}							   	
+	}
+	
+	
+	if(conf==1){
+		cout<<"La orden fue cobrada con exito"<<endl;
+	}
+	else{
+		cout<<"El nombre del cliente esta mal escrito o no existe en esta mesa"<<endl;
+	}
+	
+	archivo.close();
+	aux.close();
+	remove("Ordenes.txt");
+	rename("Ordenesaux.txt","Ordenes.txt");
+	system("cls");
+	system("pause");
+}
+
+
+
+
 
 
 
@@ -769,6 +899,9 @@ void Pedido(){
 }
 
 
+
+
+
 void Administrador(){	
     
     while(flujo!=100){
@@ -783,11 +916,12 @@ void Administrador(){
         cout<<"*------------------------------------------------------------------------------------------*"<<endl;
         cout<<"*            **               [1]. Gestionar Cliente.                                      *"<<endl;
         cout<<"*             *               [2]. Gestionar Pedido.                                       *"<<endl;
-        cout<<"*             *               [3]. Gesti�n de Men�.                                        *"<<endl;        
-        cout<<"*             *               [4]. Venta del d�a.                                          *"<<endl;
-        cout<<"*             *               [5]. Agregar Empleado.                                       *"<<endl;
-        cout<<"*             *               [6]. Info Restaurante.                                       *"<<endl;
-        cout<<"*             *               [7]. Salir.                                                  *"<<endl;
+        cout<<"*             *               [3]. Gestion de Menu.                                        *"<<endl;
+        cout<<"*             *               [4]. Cobrar.                                        *"<<endl;		        
+        cout<<"*             *               [5]. Venta del dia.                                          *"<<endl;
+        cout<<"*             *               [6]. Agregar Empleado.                                       *"<<endl;
+        cout<<"*             *               [7]. Info Restaurante.                                       *"<<endl;
+        cout<<"*             *               [8]. Salir.                                                  *"<<endl;
     	cout<<"*Seleccione la opci�n deseada: ";cin>>flujo;
         system("cls");
     
@@ -796,45 +930,20 @@ void Administrador(){
         
         case 1: 
         system("cls");
-        cout<<"********************************************************************************************"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                 ";Cliente();
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
-        break;
+        Cliente(); break;
         
         case 2:
         system("cls");
-        cout<<"********************************************************************************************"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                 ";Pedido();
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"*                                                                                          *"<<endl;
-        cout<<"********************************************************************************************"<<endl;
-        break;
-        case 3:gestionMenu(); break;
-        case 4: break;
+        Pedido(); break;
+        
+        case 3: gestionMenu(); break;
+        
+        case 4: Cobrar(); break;
+        
         case 5: break;
         case 6: break;
-        case 7: flujo=100; break;
+        case 7: break;
+        case 8: flujo=100; break;
         
         default:
         	cout<<"                	              *************************"<<endl;
