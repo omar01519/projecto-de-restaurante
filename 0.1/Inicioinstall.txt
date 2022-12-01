@@ -1,4 +1,4 @@
-                    Programa basado en estructura C++.  
+                    Programa basado en estructura C++  
                                              =========
                                           *   O&J FOOD   *
                                              =========

@@ -735,7 +735,7 @@ void Cobrar(){
     
     
     if(opc==2){
-    cout<<"introduce el nombre del cliente al cual le quieres cobrar"<<endl;
+    cout<<"Introduce el nombre del cliente al cual le quieres cobrar"<<endl;
     cin>>filtroNom;
 	}
 	
