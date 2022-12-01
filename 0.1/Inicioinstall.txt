@@ -1,6 +1,6 @@
                     Programa basado en estructura C++.  
                                              =========
-                                          *   A&J FOOD   *
+                                          *   O&J FOOD   *
                                              =========
            Creado por: Omar Francisco & Jerking Castillo
            Matriculas:       2019-1416              2015-1666 
