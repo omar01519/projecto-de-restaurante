@@ -1,14 +1,14 @@
-Programa basado en estructura C++.  
-
-                         A&J FOOD
-
+                    Programa basado en estructura C++.  
+                                          ****************
+                                          *   A&J FOOD   *
+                                             =========
            Creado por: Omar Francisco & Jerking Castillo
-           Matrículas:   2019-1416          2015-1666 
+           Matriculas:       2019-1416                2015-1666 
 
-        Version 1.0   Diciembre 2022
+                            Version 1.0   Noviembre 2022
 
-Proyecto realizado con la finalidad de ser evaluado por el Prof. Edison Perez Ramirez 
-en la asignatura de Algoritmo y Estructura de datos.
+Proyecto realizado con la finalidad de ser evaluado por el Prof. Edison Perez Ramirez.
+En la asignatura de Algoritmo y Estructura de datos.
 
-Licencia de uso gratuito y código abierto.
-Diseño y estructura en consola.
+Licencia de uso gratuito y codigo abierto.
+Disenio y estructura en consola.

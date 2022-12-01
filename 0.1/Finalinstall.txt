@@ -1,9 +1,9 @@
 Manual de Uso:
 
-Al finalizar la instalación podrá ejecutar el programa.
+Al finalizar la instalacion podra ejecutar el programa.
 
 Para el uso del mismo, utilizar el teclada para ingresar informaciones en el mismo
-y de igual forma para navegar entre las opciones y los diferentes menú.
+y de igual forma para navegar entre las opciones y los diferentes menus.
 
 
 Gracias por instalar nuestro programa!
